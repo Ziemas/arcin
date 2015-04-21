@@ -114,6 +114,10 @@ class HID_arcin : public USB_HID {
 			
 			last_led_time = Time::time();
 			button_leds.set(report->leds);
+
+			led1.on();
+			led2.on();
+
 			return true;
 		}
 		
@@ -185,10 +189,10 @@ int main() {
 	button_leds.set_mode(Pin::Output);
 	
 	led1.set_mode(Pin::Output);
-	led1.on();
+	led1.off();
 	
 	led2.set_mode(Pin::Output);
-	led2.on();
+	led2.off();
 	
 	RCC.enable(RCC.TIM2);
 	RCC.enable(RCC.TIM3);
@@ -254,6 +258,8 @@ int main() {
 		
 		if(Time::time() - last_led_time > 1000) {
 			button_leds.set(buttons);
+			led1.off();
+			led2.off();
 		}
 		
 		if(usb.ep_ready(1)) {
