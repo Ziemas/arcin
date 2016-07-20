@@ -269,11 +269,13 @@ int main() {
 			int8_t rx = qe1_count - last_x;
 			int8_t ry = qe2_count - last_y;
 			
+
+
 			if(rx > 1) {
-				state_x = 100;
+				state_x = 50;
 				last_x = qe1_count;
 			} else if(rx < -1) {
-				state_x = -100;
+				state_x = -50;
 				last_x = qe1_count;
 			} else if(state_x > 0) {
 				state_x--;
@@ -282,12 +284,18 @@ int main() {
 				state_x++;
 				last_x = qe1_count;
 			}
+			if(state_x > 0 && rx > 0){
+				state_x = 50;
+			}
+			if(state_x < 0 && rx < 0){
+				state_x = -50;
+			}
 			
 			if(ry > 1) {
-				state_y = 100;
+				state_y = 50;
 				last_y = qe2_count;
 			} else if(ry < -1) {
-				state_y = -100;
+				state_y = -50;
 				last_y = qe2_count;
 			} else if(state_y > 0) {
 				state_y--;
@@ -295,6 +303,12 @@ int main() {
 			} else if(state_y < 0) {
 				state_y++;
 				last_y = qe2_count;
+			}
+			if(state_y > 0 && ry > 0){
+				state_y = 50;
+			}
+			if(state_y < 0 && ry < 0){
+				state_y = -50;
 			}
 			
 			if(state_x > 0) {
