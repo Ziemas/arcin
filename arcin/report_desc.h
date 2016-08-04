@@ -3,10 +3,33 @@
 
 #include <usb/hid.h>
 
-auto report_desc = gamepad(
-	// Inputs.
-	report_id(1),
-	
+auto report_desc = keyboard(
+		report_id(1),
+
+		// Inputs.
+		usage_page(UsagePage::Keyboard),
+		usage('z' - 'a' + 4),
+		usage('s' - 'a' + 4),
+		usage('x' - 'a' + 4),
+		usage('d' - 'a' + 4),
+		usage('c' - 'a' + 4),
+		usage('f' - 'a' + 4),
+		usage('v' - 'a' + 4),
+		usage('g' - 'a' + 4),
+		usage('b' - 'a' + 4),
+		usage(0x28),
+		usage(0x2a),
+		usage(0xe0),
+		usage(0xe1),
+		logical_minimum(0),
+		logical_maximum(1),
+		report_count(13),
+		report_size(1),
+		input(0x02),
+
+		padding_in(3 + 8 + 8),
+
+/*		
 	buttons(15),
 	padding_in(1),
 	
@@ -24,7 +47,7 @@ auto report_desc = gamepad(
 	logical_maximum(255),
 	report_count(1),
 	report_size(8),
-	input(0x02),
+	input(0x02), */
 	
 	// Outputs.
 	report_id(2),
