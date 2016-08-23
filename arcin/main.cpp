@@ -305,17 +305,17 @@ int main() {
 				state_y = -50;
 			}
 			
-			if(state_x > 0) {
-				buttons |= 1 << 11;
-			} else if(state_x < 0) {
-				buttons |= 1 << 12;
-			}
-			
-			if(state_y > 0) {
-				buttons |= 1 << 13;
-			} else if(state_y < 0) {
-				buttons |= 1 << 14;
-			}
+//			if(state_x > 0) {
+//				buttons |= 1 << 11;
+//			} else if(state_x < 0) {
+//				buttons |= 1 << 12;
+//			}
+//			
+//			if(state_y > 0) {
+//				buttons |= 1 << 13;
+//			} else if(state_y < 0) {
+//				buttons |= 1 << 14;
+//			}
 			
 			if(config.qe1_sens < 0) {
 				qe1_count /= -config.qe1_sens;
