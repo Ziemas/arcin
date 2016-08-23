@@ -193,7 +193,7 @@ int main() {
 	RCC.enable(RCC.TIM2);
 	RCC.enable(RCC.TIM3);
 	
-	if(!(config.flags & (1 << 1))) {
+	if((config.flags & (1 << 1))) {
 		TIM2.CCER = 1 << 1;
 	}
 	
@@ -207,7 +207,7 @@ int main() {
 		TIM2.ARR = 256 - 1;
 	}
 	
-	if(!(config.flags & (1 << 2))) {
+	if((config.flags & (1 << 2))) {
 		TIM3.CCER = 1 << 1;
 	}
 	
