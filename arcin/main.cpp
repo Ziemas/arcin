@@ -34,7 +34,7 @@ auto conf_desc = configuration_desc(1, 1, 0, 0xc0, 0,
 	// HID interface.
 	interface_desc(0, 0, 1, 0x03, 0x00, 0x00, 0,
 		hid_desc(0x111, 0, 1, 0x22, sizeof(report_desc)),
-		endpoint_desc(0x81, 0x03, 16, 1)
+		endpoint_desc(0x81, 0x03, 16, 4)
 	)
 );
 
