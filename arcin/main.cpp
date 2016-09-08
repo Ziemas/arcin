@@ -266,10 +266,10 @@ int main() {
 
 
 			if(rx > 1) {
-				state_x = 50;
+				state_x = 13;
 				last_x = qe1_count;
 			} else if(rx < -1) {
-				state_x = -50;
+				state_x = -13;
 				last_x = qe1_count;
 			} else if(state_x > 0) {
 				state_x--;
@@ -279,17 +279,17 @@ int main() {
 				last_x = qe1_count;
 			}
 			if(state_x > 0 && rx > 0){
-				state_x = 50;
+				state_x = 13;
 			}
 			if(state_x < 0 && rx < 0){
-				state_x = -50;
+				state_x = -13;
 			}
 			
 			if(ry > 1) {
-				state_y = 50;
+				state_y = 13;
 				last_y = qe2_count;
 			} else if(ry < -1) {
-				state_y = -50;
+				state_y = -13;
 				last_y = qe2_count;
 			} else if(state_y > 0) {
 				state_y--;
@@ -299,10 +299,10 @@ int main() {
 				last_y = qe2_count;
 			}
 			if(state_y > 0 && ry > 0){
-				state_y = 50;
+				state_y = 13;
 			}
 			if(state_y < 0 && ry < 0){
-				state_y = -50;
+				state_y = -13;
 			}
 			
 			if(state_x > 0) {
