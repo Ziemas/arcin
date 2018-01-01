@@ -1,6 +1,6 @@
 import ctypes, ctypes.util
 
-path = ctypes.util.find_library('hidapi')
+path = ctypes.util.find_library('hidapi-hidraw')
 
 if not path:
 	raise ImportError('Cannot find hidapi library')

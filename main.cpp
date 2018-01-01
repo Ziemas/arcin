@@ -563,7 +563,7 @@ int main() {
 			}
 			
 			
-			/*
+			
 			uint32_t ps_state = (1 << 5) | (1 << 6) | (1 << 7);
 			ps_state |= buttons & (1 <<  0) ? 1 << 12 : 0; // B1
 			ps_state |= buttons & (1 <<  1) ? 1 << 13 : 0; // B2
@@ -572,12 +572,12 @@ int main() {
 			ps_state |= buttons & (1 <<  4) ? 1 << 10 : 0; // B5
 			ps_state |= buttons & (1 <<  5) ? 1 << 15 : 0; // B6
 			ps_state |= buttons & (1 <<  6) ? 1 <<  9 : 0; // B7
-			ps_state |= buttons & (1 <<  6) ? 1 <<  4 : 0; // B8
-			ps_state |= buttons & (1 <<  6) ? 1 <<  8 : 0; // B9
+			ps_state |= buttons & (1 <<  7) ? 1 <<  4 : 0; // B8
+			ps_state |= buttons & (1 <<  8) ? 1 <<  8 : 0; // B9
 			ps_state |= buttons & (1 << 10) ? 1 <<  0 : 0; // select
 			ps_state |= buttons & (1 <<  9) ? 1 <<  3 : 0; // start
-			*/
 			
+			/*
 			uint32_t ps_state = 0;
 			ps_state |= buttons & (1 <<  0) ? 1 << 15 : 0; // B1
 			ps_state |= buttons & (1 <<  1) ? 1 << 10 : 0; // B2
@@ -590,6 +590,7 @@ int main() {
 			ps_state |= buttons & (1 <<  9) ? 1 <<  3 : 0; // start
 			ps_state |= buttons & (1 << 11) ? 1 <<  4 : 0; // TT+
 			ps_state |= buttons & (1 << 12) ? 1 <<  6 : 0; // TT-
+			*/
 			
 			spi_ps.set_state(ps_state);
 		}
