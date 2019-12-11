@@ -37,8 +37,8 @@ protected:
         usb.write(0, (uint32_t *)dp, len);
       } break;
       case 1: {
-        buf[0] = 0x0332;
-        for (const char *p = "Konami Digital Entertainment"; *p; p++) {
+        buf[0] = 0x0300;
+        for (const char *p = "Konami Amusement"; *p; p++) {
           buf[i++] = *p;
         }
         buf[0] |= i * 2;
@@ -49,9 +49,9 @@ protected:
       } break;
 
       case 2: {
-        buf[0] = 0x0372;
+        buf[0] = 0x0300;
         for (const char *p =
-                 "Konami Amusement beatmania IIDX controller premium model";
+                 "beatmania IIDX controller premium model";
              *p; p++) {
           buf[i++] = *p;
         }
