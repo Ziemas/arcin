@@ -3,28 +3,6 @@
 
 #include <usb/hid.h>
 
-template <typename... R>
-constexpr auto joystick(R... r) -> decltype(
-    pack(
-        usage_page(UsagePage::Desktop),
-        usage(DesktopUsage::Joystick),
-        collection(Collection::Application,
-                   collection(Collection::Physical,
-                              r...
-                       )
-            )
-        )) {
-    return pack(
-        usage_page(UsagePage::Desktop),
-        usage(DesktopUsage::Joystick),
-        collection(Collection::Application,
-                   collection(Collection::Physical,
-                              r...
-                       )
-            )
-        );
-}
-
 auto report_desc = joystick(
 	// Inputs.
 	report_id(1),
